@@ -27,6 +27,39 @@
         "slideTitle": "房车旅游的开创者",
         "imgUrl": "static/img/index/banner05.jpg"
       }],
+    "swiperNavList": [{
+        "id": "0001",
+        "title": "首页",
+        "linkUrl": "/"
+      }, {
+        "id": "0002",
+        "title": "企业简介",
+        "linkUrl": "/"
+      }, {
+        "id": "0003",
+        "title": "房车超市",
+        "linkUrl": "/"
+      }, {
+        "id": "0004",
+        "title": "自驾路线",
+        "linkUrl": "/"
+      }, {
+        "id": "0005",
+        "title": "活动体验",
+        "linkUrl": "/"
+      }, {
+        "id": "0006",
+        "title": "活动中心",
+        "linkUrl": "/"
+      }, {
+        "id": "0007",
+        "title": "新闻资讯",
+        "linkUrl": "/"
+      }, {
+        "id": "0008",
+        "title": "联系我们",
+        "linkUrl": "/"
+      }],
     "iconList": [{
         "id": "0",
         "imgUrl": "static/img/index/sy01.png",
@@ -241,7 +274,7 @@
         "id": "0004",
         "imgUrl": "static/img/index/question_01.jpg",
         "title": "51房车俱乐部 艾友",
-        "subtitle": "中国的荣耀，阳光下的晶莹水滴"
+        "subtitle": "跟该公司合作最轻松，强大的售后服务体系交货准时， 产能强大，订单数量质量100%有保证。"
       }, {
         "id": "0005",
         "imgUrl": "static/img/index/question_02.jpg",

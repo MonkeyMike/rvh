@@ -119,7 +119,6 @@ export default {
         text-indent .2rem
       .activated
         bottom 2rem
-        transform scale(1.2)
         color #fff
       .icon-img-content
         height 90%
@@ -165,6 +164,7 @@ export default {
           background $bgColor
           text-align center
           font-size .44rem
+          ellipsis()
   .icons-more
     border .02rem solid #eee
     width 5rem

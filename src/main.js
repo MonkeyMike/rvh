@@ -13,7 +13,20 @@ import 'styles/border.css'
 import 'styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 
+/**
+ * 设置rem
+ * @param pwidth
+ * @param prem
+ */
+export function getRem (pwidth, prem) {
+  var html = document.getElementsByTagName('html')[0]
+  var oWidth = document.body.clientWidth || document.documentElement.clientWidth
+  html.style.fontSize = oWidth / pwidth * prem + 'px'
+  console.log(oWidth / pwidth * prem + 'px')
+}
+
 Vue.prototype.$axios = Axios
+Vue.prototype.getRem = getRem
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
 // Vue.use(jQuery)

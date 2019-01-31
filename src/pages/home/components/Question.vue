@@ -27,9 +27,9 @@
               {{ item }}
             </div>
           </div>
-          <div class="right-content-desc border">
+          <div class="right-content-desc">
             <div
-              class="content-desc border-bottom"
+              class="content-desc"
               v-for="(item, index) of questionList[questionIndex]"
               :key="index"
             >
@@ -93,7 +93,8 @@ export default {
       .title-left, .title-right
         font-size .6rem
         border-bottom .08rem solid $bgColor
-        width 2.5rem
+        width 3rem
+        text-align center
         letter-spacing .02rem
         padding-bottom .2rem
         color $darkTextColor
@@ -101,8 +102,9 @@ export default {
         border .04rem dashed $bgColor
         border-radius 2rem
         display flex
-        padding .4rem .8rem
+        padding .6rem .8rem
         margin .8rem .6rem 1rem 0
+        align-items center
         .left-content-img
           display block
           border-radius 50%
@@ -110,14 +112,13 @@ export default {
         .left-content-desc
           font-size .36rem
           font-weight 700
-          margin .24rem
+          margin-left .2rem
           .left-content-title
             margin-bottom .24rem
-            ellipsis()
           .left-content-subtitle
             font-size .32rem
             text-indent .66rem
-            line-height .4rem
+            line-height 120%
     .title-right
       margin-bottom .14rem
     .title-right-more
@@ -132,8 +133,10 @@ export default {
       margin-top .8rem
       display flex
       .right-content-title
-        flex 1
+        width 30%
         border 1px solid #eaeaea
+        div
+          ellipsis()
         .content-subtitle
           height 2.4rem
           text-align center
@@ -143,17 +146,16 @@ export default {
           background $bgColor
           color #fff
       .right-content-desc
-        flex 3
+        width 100%
+        border 1px solid #eaeaea
         .content-desc
           margin .2rem .24rem
           padding-bottom .2rem
           display flex
-          line-height .44rem
+          align-items center
+          justify-content space-between
           .content-desc-subtitle
             ellipsis()
             text-indent .2rem
             flex 1
-          .content-desc-time
-            flex .4
-            text-align right
 </style>

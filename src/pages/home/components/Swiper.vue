@@ -4,32 +4,16 @@
     <swiper-slide v-for="item of list" :key="item.id">
       <img :src="item.logoUrl" alt="" class="swiper-logo">
       <p class="swiper-title">{{item.slideTitle}}</p>
-      <ul class="swiper-nav">
-        <li>
-          <router-link to="/">首页</router-link>
-        </li>
-        <li>
-          <router-link to="/">企业简介</router-link>
-        </li>
-        <li>
-          <router-link to="/">房车超市</router-link>
-        </li>
-        <li>
-          <router-link to="/">自驾路线</router-link>
-        </li>
-        <li>
-          <router-link to="/">活动体验</router-link>
-        </li>
-        <li>
-          <router-link to="/">活动中心</router-link>
-        </li>
-        <li>
-          <router-link to="/">新闻资讯</router-link>
-        </li>
-        <li>
-          <router-link to="/">联系我们</router-link>
-        </li>
-      </ul>
+      <div class="swiper-nav">
+        <router-link
+          :to="items.linkUrl"
+          v-for="items of swiperNavList"
+          :key="items.id"
+          :class="[swiperNavA, {acitvated: items.id === '0001'}]"
+        >
+          {{items.title}}
+        </router-link>
+      </div>
       <img :src="item.imgUrl" alt="" class="swiper-img">
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
@@ -45,10 +29,11 @@ export default {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true,
-        autoplay: 3000,
+        // autoplay: 3000,
         autoplayDisableOnInteraction: false,
         paginationClickable: true
-      }
+      },
+      swiperNavA: 'swiper-nav-a'
     }
   },
   computed: {
@@ -57,15 +42,15 @@ export default {
     }
   },
   props: {
-    list: Array
+    list: Array,
+    swiperNavList: Array
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-a
-  color #fff
-  font-size .32rem
+@import '~styles/mixins.styl'
+@import '~styles/varibles.styl'
 .wrapper >>> .swiper-pagination-bullet-active
   background #fff
 .wrapper
@@ -78,6 +63,7 @@ a
   color #fff
   .swiper-logo
     position absolute
+    width 13.19%
     top .4rem
     left 1.8rem
   .swiper-title
@@ -90,11 +76,19 @@ a
     width: 100%
   .swiper-nav
     position absolute
+    width 80%
     display flex
+    justify-content space-around
     top 1rem
-    right 2rem
-  .swiper-nav>li
-    display inline-block
-    width 2rem
-    text-align center
+    right 0
+    .swiper-nav-a
+      color #fff
+      display inline-block
+      font-size .32rem
+      overflow hidden
+      white-space nowrap
+      text-overflow clip
+      margin-left .06rem
+    .acitvated
+      color $bgColor
 </style>

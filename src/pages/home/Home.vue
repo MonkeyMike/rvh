@@ -1,7 +1,7 @@
 <template>
 <div>
   <common-header></common-header>
-  <home-swiper :list="swiperList"></home-swiper>
+  <home-swiper :list="swiperList" :swiperNavList="swiperNavList"></home-swiper>
   <home-about></home-about>
   <home-icons
     :list="iconList"
@@ -30,7 +30,6 @@ import HomeCenter from './components/Center'
 import HomeActivity from './components/Activity'
 import HomeFootBanner from './components/FootBanner'
 import CommonFooter from '../CommonFooter'
-import { mapState } from 'vuex'
 export default {
   name: 'Home',
   components: {
@@ -46,8 +45,8 @@ export default {
   },
   data () {
     return {
-      lastCity: '',
       swiperList: [],
+      swiperNavList: [],
       iconList: [],
       contentList: [],
       memberList: [],
@@ -58,12 +57,9 @@ export default {
       footLinkList: []
     }
   },
-  computed: {
-    ...mapState(['city'])
-  },
   methods: {
     getHomeInfo () {
-      this.$axios.get('/api/index.json?city=' + this.city)
+      this.$axios.get('/api/index.json')
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
@@ -71,6 +67,7 @@ export default {
       if (res.ret && res.data) {
         const data = res.data
         this.swiperList = data.swiperList
+        this.swiperNavList = data.swiperNavList
         this.iconList = data.iconList
         this.contentList = data.contentList
         this.memberList = data.memberList
@@ -83,14 +80,8 @@ export default {
     }
   },
   mounted () {
-    this.lastCity = this.city
     this.getHomeInfo()
-  },
-  activated () {
-    if (this.lastCity !== this.city) {
-      this.lastCity = this.city
-      this.getHomeInfo()
-    }
+    this.getRem(1366, 50)
   }
 }
 </script>

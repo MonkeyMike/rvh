@@ -79,9 +79,8 @@ export default {
 @import '~styles/mixins.styl'
 .footer
   margin-top 1rem
-  overflow hidden
   position relative
-  padding-bottom 24%
+  min-height 6.8rem
   background #212121
   color #fff
   box-sizing border-box

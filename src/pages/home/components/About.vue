@@ -33,5 +33,5 @@ export default {
     margin .24rem auto .6rem
     text-align justify
     letter-spacing .02rem
-    line-height .6rem
+    line-height 140%
 </style>
