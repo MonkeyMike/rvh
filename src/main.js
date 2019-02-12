@@ -29,7 +29,6 @@ Vue.prototype.$axios = Axios
 Vue.prototype.getRem = getRem
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
-// Vue.use(jQuery)
 fastClick.attach(document.body)
 
 /* eslint-disable no-new */

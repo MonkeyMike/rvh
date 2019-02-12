@@ -90,6 +90,6 @@ export default {
     .content-right
       flex .4
       .content-right-img
-        margin-top .2rem
+        margin-top .4rem
         width 100%
 </style>

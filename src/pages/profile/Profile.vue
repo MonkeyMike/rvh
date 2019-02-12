@@ -3,6 +3,7 @@
   <common-header></common-header>
   <common-swiper :list="swiperList" :swiperNavList="swiperNavList"></common-swiper>
   <profile-about :list="profileDescList" :profileImgsList="profileImgsList"></profile-about>
+  <profile-core :list="profileCoreList"></profile-core>
   <common-footer :list="footLinkList"></common-footer>
 </div>
 </template>
@@ -11,6 +12,7 @@
 import CommonHeader from '@/common/header/CommonHeader'
 import CommonSwiper from '@/common/header/CommonSwiper'
 import ProfileAbout from './components/About'
+import ProfileCore from './components/Core'
 import CommonFooter from '@/common/footer/CommonFooter'
 export default {
   name: 'Profile',
@@ -20,6 +22,7 @@ export default {
       swiperNavList: [],
       profileDescList: [],
       profileImgsList: [],
+      profileCoreList: [],
       footLinkList: []
     }
   },
@@ -27,6 +30,7 @@ export default {
     CommonHeader,
     CommonSwiper,
     ProfileAbout,
+    ProfileCore,
     CommonFooter
   },
   methods: {
@@ -51,6 +55,7 @@ export default {
         const data = res.data
         this.profileDescList = data.profileDescList
         this.profileImgsList = data.profileImgsList
+        this.profileCoreList = data.profileCoreList
       }
     }
   },
