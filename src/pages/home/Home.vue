@@ -21,15 +21,15 @@
 </template>
 
 <script>
-import CommonHeader from '../CommonHeader'
-import CommonSwiper from '../CommonSwiper'
+import CommonHeader from '@/common/header/CommonHeader'
+import CommonSwiper from '@/common/header/CommonSwiper'
 import HomeAbout from './components/About'
 import HomeIcons from './components/Icons'
 import HomeQuestion from './components/Question'
 import HomeCenter from './components/Center'
 import HomeActivity from './components/Activity'
 import HomeFootBanner from './components/FootBanner'
-import CommonFooter from '../CommonFooter'
+import CommonFooter from '@/common/footer/CommonFooter'
 export default {
   name: 'Home',
   components: {

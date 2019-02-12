@@ -7,10 +7,8 @@
         <div class="address-title">{{title}}</div>
       </div>
       <div class="address-right">
-        <div class="address-right-content">
-          <img src="static/img/index/index07.png" class="address-position-img">
-          地址：武汉市古田四路江城壹号51房车
-        </div>
+        <img src="static/img/index/index07.png" class="address-position-img">
+        地址：武汉市古田四路江城壹号51房车
       </div>
     </div>
     <div class="footer-position">
@@ -103,10 +101,8 @@ export default {
       .address-right
         flex 1
         padding-top .4rem
-        .address-right-content
-          display flex
-          .address-position-img
-            vertical-align middle
+        .address-position-img
+          vertical-align middle
     .footer-position
       flex 1
       display flex
