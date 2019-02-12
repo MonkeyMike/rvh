@@ -8,8 +8,8 @@
       </div>
       <div class="address-right">
         <div class="address-right-content">
-          <img src="static/img/index/index07.png" alt="">
-          <div class="address-subtitle">地址：武汉市古田四路江城壹号51房车</div>
+          <img src="static/img/index/index07.png" class="address-position-img">
+          地址：武汉市古田四路江城壹号51房车
         </div>
       </div>
     </div>
@@ -55,17 +55,10 @@ export default {
   methods: {
     init () {
       this.map = new BMap.Map('allmap')
-      var point = new BMap.Point(114.216753, 30.602689)
+      var point = new BMap.Point(114.217753, 30.603503)
       this.map.centerAndZoom(point, 14)
       var marker = new BMap.Marker(point)
       this.map.addOverlay(marker)
-      var opts = {
-        width: 100,
-        height: 50,
-        title: '51房车'
-      }
-      var infoWindow = new BMap.InfoWindow('地址：武汉市古田四路江城壹号51房车', opts)
-      this.map.openInfoWindow(infoWindow, this.map.getCenter())
     }
   },
   mounted () {
@@ -78,9 +71,9 @@ export default {
 @import '~styles/varibles.styl'
 @import '~styles/mixins.styl'
 .footer
-  margin-top 1rem
+  overflow hidden
   position relative
-  min-height 6.8rem
+  padding-bottom 26%
   background #212121
   color #fff
   box-sizing border-box
@@ -89,29 +82,31 @@ export default {
     width 86.7%
     left 0
     right 0
+    top 1rem
     margin auto
     display flex
-    padding .8rem 0 .6rem
     .footer-address
       flex 0.8
       display flex
       .address-left
         flex 0.6
         text-align center
+        .address-logo
+          width 100%
         .address-title
           font-size .48rem
           font-weight 500
           color $bgColor
           indent()
+          ellipsis()
           margin .24rem 0
       .address-right
         flex 1
         padding-top .4rem
         .address-right-content
           display flex
-          .address-subtitle
-            text-indent .1rem
-            line-height .6rem
+          .address-position-img
+            vertical-align middle
     .footer-position
       flex 1
       display flex
@@ -140,15 +135,17 @@ export default {
     right 0
     margin auto
     .link
-      width 40%
+      width 86.7%
       margin 0 auto
       padding .24rem 0
       display flex
-      justify-content space-around
+      justify-content center
+      .link-title, .link-subtitle
+        margin-right .2rem
       .link-subtitle
         color #fff
     .desc
-      width 80%
+      width 86.7%
       margin 0 auto
       padding-bottom .24rem
       text-align center

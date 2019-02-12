@@ -1,5 +1,5 @@
 <template>
-<div class="wrapper">
+<div>
   <div class="wrapper-title">
     <div
       v-for="(item, index) of titleList"
@@ -10,14 +10,16 @@
       {{item}}
     </div>
   </div>
-  <swiper :options="swiperOption">
-    <swiper-slide v-for="(item, index) of list[detailIndex]" :key="index">
-      <img :src="item.imgUrl" class="swiper-img">
-      <div class="swiper-img-title">{{item.title}}</div>
-    </swiper-slide>
+  <div class="wrapper">
+    <swiper :options="swiperOption">
+      <swiper-slide v-for="(item, index) of list[detailIndex]" :key="index">
+        <img :src="item.imgUrl" class="swiper-img">
+        <div class="swiper-img-title">{{item.title}}</div>
+      </swiper-slide>
+    </swiper>
     <div class="swiper-button-prev swiper-button-black" slot="button-prev"></div>
     <div class="swiper-button-next swiper-button-black" slot="button-next"></div>
-  </swiper>
+  </div>
 </div>
 </template>
 
@@ -54,15 +56,30 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
 @import '~styles/mixins.styl'
+.wrapper-title
+  width 50%
+  margin .24rem auto 0
+  display flex
+  justify-content space-around
+  text-align center
+  .wrapper-title-content
+    width 3rem
+    height 1rem
+    line-height 1rem
+    font-size .48rem
+    cursor pointer
+  .titleActivated
+    border-bottom .08rem solid $bgColor
 .wrapper
   width 86.7%
-  margin .6rem auto 0
+  margin 0 auto 1rem
+  position relative
   .swiper-slide
     overflow hidden
     padding-bottom 20%
     position relative
     .swiper-img
-      width 80%
+      width 90%
       position absolute
       top 0
       bottom 0
@@ -80,21 +97,8 @@ export default {
       margin auto
       text-align center
       ellipsis()
-  .wrapper-title
-    width 50%
-    margin .24rem auto 0
-    display flex
-    justify-content space-around
-    .wrapper-title-content
-      width 2.2rem
-      height 1rem
-      line-height 1rem
-      font-size .48rem
-      cursor pointer
-    .titleActivated
-      border-bottom .08rem solid $bgColor
   .swiper-button-prev
-    left 0
+    left -1.4rem
   .swiper-button-next
-    right 0
+    right -1.4rem
 </style>

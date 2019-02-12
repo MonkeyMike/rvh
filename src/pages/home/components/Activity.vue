@@ -61,7 +61,7 @@ export default {
 .activity
   position relative
   overflow hidden
-  padding-bottom: 40%
+  padding-bottom: 50%
   background url('http://www.51rvh.com/templets/wangzhan/images/indexbg.jpg') no-repeat center
   .activity-content
     position absolute
@@ -79,12 +79,13 @@ export default {
     .left-title, .right-title
       border-bottom .1rem solid $bgColor
       margin-bottom .6rem
-      width 2.4rem
+      width 3rem
       height 1rem
       line-height 1rem
       color #fff
       font-size .6rem
       font-weight 500
+      text-align center
     .left-content
       display flex
       .left-content-img
@@ -93,7 +94,7 @@ export default {
         .left-content-image
           width 100%
       .left-content-desc
-        flex .7
+        flex .8
         color #fff
         .desc-title
           font-size .46rem

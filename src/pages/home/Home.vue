@@ -1,7 +1,7 @@
 <template>
 <div>
   <common-header></common-header>
-  <home-swiper :list="swiperList" :swiperNavList="swiperNavList"></home-swiper>
+  <common-swiper :list="swiperList" :swiperNavList="swiperNavList"></common-swiper>
   <home-about></home-about>
   <home-icons
     :list="iconList"
@@ -22,7 +22,7 @@
 
 <script>
 import CommonHeader from '../CommonHeader'
-import HomeSwiper from './components/Swiper'
+import CommonSwiper from '../CommonSwiper'
 import HomeAbout from './components/About'
 import HomeIcons from './components/Icons'
 import HomeQuestion from './components/Question'
@@ -34,7 +34,7 @@ export default {
   name: 'Home',
   components: {
     CommonHeader,
-    HomeSwiper,
+    CommonSwiper,
     HomeAbout,
     HomeIcons,
     HomeQuestion,
