@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Home from 'pages/home/Home'
 import Profile from 'pages/profile/Profile'
+import Shop from 'pages/shop/Shop'
 
 Vue.use(Router)
 
@@ -17,6 +18,10 @@ export default new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile
+    }, {
+      path: '/shop',
+      name: 'Shop',
+      component: Shop
     }
   ],
   scrollBehavior () {

@@ -15,3 +15,15 @@
 8. 会员风采 合作品牌 局部小图banner
 9. 尾部logo 联系方式 百度地图定位 微信二维码 友情链接
 
+#房车超市
+ 房车出售分页数据分析
+  [{
+    "id": "0001",
+    "title": "春田自动挡房车2018全新亮相",
+    "price": "36.8",
+    "brand": "春田",
+    "family": "经济适用",
+    "imgUrl": "static/img/shop/sell_01.jpg",
+    "linkUrl": "/shop/0001"
+  }]
+  ToDo: 将json数据修改为包含4个板块内容数据的集合 shopSellList shopHireList outdoorGearList designList
